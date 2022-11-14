@@ -1,21 +1,55 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from base.base_class import Base
 
 
-class Login_page():
+class Login_page(Base):
+
+    url = 'https://www.saucedemo.com/'
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
 
-    def authorization(self, login_name, login_password):
-        user_name = WebDriverWait(self.driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, "//input[@id='user-name']")))  # data test Xpath
-        user_name.send_keys(login_name)
 
-        password = WebDriverWait(self.driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, "//input[@id='password']")))  # password CSS selector
-        password.send_keys(login_password)
+    #Locators
+    user_name = "//input[@id='user-name']"
+    password = "//input[@id='password']"
+    login_button = "//input[@id ='login-button']"
 
-        button_login = WebDriverWait(self.driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, "//input[@id ='login-button']")))
-        button_login.click()
+
+    #Getters
+
+    def get_user_name(self):
+        return WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.user_name)))
+    def get_password(self):
+        return WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.password)))
+
+    def get_login_button(self):
+        return WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.login_button)))
+
+
+    #Actions
+
+    def input_user_name(self, user_name):
+        self.get_user_name().send_keys(user_name)
+        print("Input user name")
+
+    def input_password(self, password):
+        self.get_password().send_keys(password)
+        print("Input password")
+
+    def click_login_button(self):
+        self.get_login_button().click()
+        print("Input login button")
+
+    # Methods
+    def authorization(self):
+        self.driver.get(self.url)
+        self.driver.maximize_window()
+        self.input_user_name("standard_user")
+        self.input_password("secret_sauce")
+        self.click_login_button()
