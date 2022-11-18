@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
 from pages.cart_page import Cart_page
+from pages.client_info_page import Client_info_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
 
@@ -24,5 +25,7 @@ def test_buy_product():
     cp = Cart_page(driver)
     cp.select_checkout_button()
 
+    cip = Client_info_page(driver)
+    cip.input_information()
 
     time.sleep(5)
