@@ -24,5 +24,5 @@ def test_buy_product():
     cp = Cart_page(driver)
     cp.select_checkout_button()
 
-    
+
     time.sleep(5)
