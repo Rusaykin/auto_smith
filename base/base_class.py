@@ -1,3 +1,5 @@
+import datetime
+
 
 class Base():
     def __init__(self, driver):
@@ -12,10 +14,22 @@ class Base():
     """Method assert word"""
 
     def assert_word(self, word, result):
-
-# text_products = driver.find_element(By.XPATH, "//*[@class='title']")
-# value_text_products = text_products.text
-# assert value_text_products == "PRODUCTS"
-# print("Good")
         value_word = word.text
         assert value_word == result
+
+
+    """Method svreenshot"""
+
+    def get_screenshot(self):
+        # Создаем скриншот
+        now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
+        name_screen = 'screenshot' + now_date + '.png'
+        self.driver.save_screenshot('E:\\Projects\\auto_smith\\screen\\' + name_screen)
+
+
+    """Method assert url"""
+
+    def assert_url(self, result):
+        get_url = self.driver.current_url
+        assert get_url == result
+        print("Get URL")
