@@ -13,21 +13,13 @@ class Finish_page(Base):
 
 
     #Locators
-    # finish_button = "//button[@id='finish']"
 
 
     #Getters
 
-    # def get_finish_button(self):
-    #     return WebDriverWait(self.driver, 30).until(
-    #         EC.element_to_be_clickable((By.XPATH, self.finish_button)))
-
 
     #Actions
 
-    # def click_finish_button(self):
-    #     self.get_finish_button().click()
-    #     print("Finish button is clicked")
 
 
     # Methods

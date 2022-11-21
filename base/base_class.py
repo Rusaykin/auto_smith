@@ -28,7 +28,7 @@ class Base():
 
 
     """Method assert url"""
-
+        #Метод по сравниванию url
     def assert_url(self, result):
         get_url = self.driver.current_url
         assert get_url == result
