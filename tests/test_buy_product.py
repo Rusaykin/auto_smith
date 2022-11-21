@@ -1,4 +1,6 @@
 import time
+
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -43,7 +45,7 @@ def test_buy_product_1():
 
     driver.quit()
 
-
+@pytest.mark.run(order=1)
 def test_buy_product_2():
     s = Service('C:\\chromedriver\\chromedriver.exe')
     driver = webdriver.Chrome(service=s)
