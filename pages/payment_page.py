@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
 from utilities.logger import Logger
-
+import allure
 
 class Payment_page(Base):
 
@@ -33,7 +33,8 @@ class Payment_page(Base):
 
     # Methods
     def tap_finish_button(self):
-        Logger.add_start_step(method="tap_finish_button")
-        self.get_current_url()
-        self.click_finish_button()
-        Logger.add_end_step(url=self.driver.current_url, method="tap_finish_button")
+        with allure.step("Finish part"):
+            Logger.add_start_step(method="tap_finish_button")
+            self.get_current_url()
+            self.click_finish_button()
+            Logger.add_end_step(url=self.driver.current_url, method="tap_finish_button")

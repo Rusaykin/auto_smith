@@ -12,8 +12,10 @@ from pages.finish_page import Finish_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.payment_page import Payment_page
+import allure
 
 
+@allure.description("Test About Link")
 def test_about_link():
     s = Service('C:\\chromedriver\\chromedriver.exe')
     driver = webdriver.Chrome(service=s)
@@ -21,7 +23,7 @@ def test_about_link():
     login = Login_page(driver)
     login.authorization()
 
-    mp = Main_page(driver) #mp = main page
+    mp = Main_page(driver)  # mp = main page
     mp.select_menu_about()
 
     driver.quit()
