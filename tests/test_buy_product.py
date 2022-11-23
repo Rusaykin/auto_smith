@@ -44,39 +44,39 @@ def test_buy_product_1(set_group):
     driver.quit()
 
 
-# @pytest.mark.regression
-# @pytest.mark.run(order=1)
-# def test_buy_product_2():
-#     s = Service('C:\\chromedriver\\chromedriver.exe')
-#     driver = webdriver.Chrome(service=s)
-#     print("Start test 2")
-#     login = Login_page(driver)
-#     login.authorization()
-#
-#     mp = Main_page(driver)  # mp = main page
-#     mp.select_products_2()
-#
-#     cp = Cart_page(driver)  # Cp = cart page
-#     cp.select_checkout_button()
-#
-#     time.sleep(2)
-#
-#     driver.quit()
-#
-#
-# def test_buy_product_3():
-#     s = Service('C:\\chromedriver\\chromedriver.exe')
-#     driver = webdriver.Chrome(service=s)
-#     print("Start test 3")
-#     login = Login_page(driver)
-#     login.authorization()
-#
-#     mp = Main_page(driver)  # mp = main page
-#     mp.select_products_3()
-#
-#     cp = Cart_page(driver)  # Cp = cart page
-#     cp.select_checkout_button()
-#
-#     time.sleep(2)
-#
-#     driver.quit()
+@pytest.mark.regression
+@pytest.mark.run(order=1)
+def test_buy_product_2():
+    s = Service('C:\\chromedriver\\chromedriver.exe')
+    driver = webdriver.Chrome(service=s)
+    print("Start test 2")
+    login = Login_page(driver)
+    login.authorization()
+
+    mp = Main_page(driver)  # mp = main page
+    mp.select_products_2()
+
+    cp = Cart_page(driver)  # Cp = cart page
+    cp.select_checkout_button()
+
+    time.sleep(2)
+
+    driver.quit()
+
+
+def test_buy_product_3():
+    s = Service('C:\\chromedriver\\chromedriver.exe')
+    driver = webdriver.Chrome(service=s)
+    print("Start test 3")
+    login = Login_page(driver)
+    login.authorization()
+
+    mp = Main_page(driver)  # mp = main page
+    mp.select_products_3()
+
+    cp = Cart_page(driver)  # Cp = cart page
+    cp.select_checkout_button()
+
+    time.sleep(2)
+
+    driver.quit()
