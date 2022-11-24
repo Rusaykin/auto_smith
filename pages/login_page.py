@@ -5,24 +5,26 @@ from base.base_class import Base
 from utilities.logger import Logger
 import allure
 
+
 class Login_page(Base):
     url = 'https://www.saucedemo.com/'
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
 
-
-    #Locators
+    # Locators
     user_name = "//input[@id='user-name']"
     password = "//input[@id='password']"
     login_button = "//input[@id ='login-button']"
     main_word = "//span[@class='title']"
 
-    #Getters
+    # Getters
 
     def get_user_name(self):
         return WebDriverWait(self.driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, self.user_name)))
+
     def get_password(self):
         return WebDriverWait(self.driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, self.password)))
@@ -35,8 +37,7 @@ class Login_page(Base):
         return WebDriverWait(self.driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, self.main_word)))
 
-
-    #Actions
+    # Actions
 
     def input_user_name(self, user_name):
         self.get_user_name().send_keys(user_name)
