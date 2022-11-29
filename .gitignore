@@ -5,3 +5,4 @@
 /screen/*
 /logs/*
 /test_results/*
+/allure-report/*

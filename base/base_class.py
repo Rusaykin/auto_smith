@@ -24,7 +24,7 @@ class Base():
         # Создаем скриншот
         now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
         name_screen = 'screenshot' + now_date + '.png'
-        self.driver.save_screenshot('E:\\Projects\\auto_smith\\screen\\' + name_screen)
+        self.driver.save_screenshot('C:\\Projects\\auto_smith\\screen\\' + name_screen)
 
 
     """Method assert url"""
