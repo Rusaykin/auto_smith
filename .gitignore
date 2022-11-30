@@ -9,3 +9,4 @@
 /test_results/*
 /allure-report/*
 /__pycache__/*
+__pycache__/
