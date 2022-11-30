@@ -3,6 +3,8 @@ import allure
 
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -20,8 +22,11 @@ from pages.payment_page import Payment_page
 @allure.description("Test buy product_1")
 @pytest.mark.smoke
 def test_buy_product_1(set_group):
-    s = Service('C:\\chromedriver\\chromedriver.exe')
-    driver = webdriver.Chrome(service=s)
+    # s = Service('C:\\chromedriver\\chromedriver.exe')
+    # driver = webdriver.Chrome(service=s)
+    # Install chrome driver from local path
+
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     print("Start test 1")
     login = Login_page(driver)
     login.authorization()

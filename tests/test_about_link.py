@@ -1,5 +1,7 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,8 +19,10 @@ import allure
 
 @allure.description("Test About Link")
 def test_about_link():
-    s = Service('C:\\chromedriver\\chromedriver.exe')
-    driver = webdriver.Chrome(service=s)
+    # s = Service('C:\\chromedriver\\chromedriver.exe')
+    # driver = webdriver.Chrome(service=s)
+    # Install chrome driver from local path
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
     login = Login_page(driver)
     login.authorization()

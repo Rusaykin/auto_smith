@@ -8,3 +8,4 @@
 /logs/*
 /test_results/*
 /allure-report/*
+/__pycache__/*
