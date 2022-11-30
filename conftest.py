@@ -14,3 +14,4 @@ def set_group():
     print("Enter system")  # Всё что до теста
     yield  # Test
     print("Exit system")  # всё что после теста
+#www
