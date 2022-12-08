@@ -39,3 +39,23 @@ python -m pytest --alluredir=test_results/ tests/ test_buy_product.py
 ```
 E:\Projects\auto_smith> allure serve test_results/
 ```
+
+## For first build selenoid on Ubuntu
+rusaykin@rusaykin-TM1703:~/projects/auto_smith$ sudo docker compose up
+
+Проверка образов в докере
+sudo docker images -a
+
+Прооверка запущенных контейнеров
+sudo docker ps
+
+Остановка контейнера в докере по id
+sudo docker stop 216459e236c1
+
+## Jenkins install 
+
+sudo docker run -p 8080:8080 --name=jenkins-master jenkins/jenkins:latest
+
+sudo docker start jenkins-master
+
+sudo docker stop jenkins-master

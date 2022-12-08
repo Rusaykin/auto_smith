@@ -1,0 +1,77 @@
+
+-----------------
+Test: tests/test_about_link.py::test_about_link (call)
+Start time: 2022-12-07 13:36:18.744345
+Start name method: authorization
+
+End time: 2022-12-07 13:36:20.889619
+End name method: authorization
+URL: https://www.saucedemo.com/inventory.html
+
+-----
+
+-----------------
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2022-12-07 13:36:25.676304
+Start name method: authorization
+
+End time: 2022-12-07 13:36:26.921344
+End name method: authorization
+URL: https://www.saucedemo.com/inventory.html
+
+-----
+
+-----------------
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2022-12-07 13:36:26.921569
+Start name method: select_products_1
+
+End time: 2022-12-07 13:36:27.118243
+End name method: select_products_1
+URL: https://www.saucedemo.com/cart.html
+
+-----
+
+-----------------
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2022-12-07 13:36:27.118444
+Start name method: select_checkout_button
+
+End time: 2022-12-07 13:36:27.207557
+End name method: select_checkout_button
+URL: https://www.saucedemo.com/checkout-step-one.html
+
+-----
+
+-----------------
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2022-12-07 13:36:27.207764
+Start name method: input_information
+
+End time: 2022-12-07 13:36:27.616902
+End name method: input_information
+URL: https://www.saucedemo.com/checkout-step-two.html
+
+-----
+
+-----------------
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2022-12-07 13:36:27.617188
+Start name method: tap_finish_button
+
+End time: 2022-12-07 13:36:27.701026
+End name method: tap_finish_button
+URL: https://www.saucedemo.com/checkout-complete.html
+
+-----
+
+-----------------
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2022-12-07 13:36:27.701474
+Start name method: finish
+
+End time: 2022-12-07 13:36:27.901632
+End name method: finish
+URL: https://www.saucedemo.com/checkout-complete.html
+
+-----

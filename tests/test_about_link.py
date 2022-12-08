@@ -18,7 +18,7 @@ import allure
 
 
 @allure.description("Test About Link")
-def test_about_link():
+def test_about_link(get_chrome_options):
     # s = Service('C:\\chromedriver\\chromedriver.exe')
     # driver = webdriver.Chrome(service=s)
     # Install chrome driver from local path
