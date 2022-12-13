@@ -17,16 +17,35 @@ from pages.finish_page import Finish_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.payment_page import Payment_page
-
+from selenium.webdriver import DesiredCapabilities
 
 @allure.description("Test buy product_1")
 @pytest.mark.smoke
-def test_buy_product_1(set_group):
+def test_buy_product_1():
     # s = Service('C:\\chromedriver\\chromedriver.exe')
     # driver = webdriver.Chrome(service=s)
     # Install chrome driver from local path
 
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
+    # chrome_options = webdriver.ChromeOptions()
+    # driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
+    #                           desired_capabilities=DesiredCapabilities.CHROME,
+    #                           options=chrome_options)
+
+    capabilities = {
+        "browserName": "chrome",
+        "browserVersion": "108.0",
+        "enableVNC": True,
+        "selenoid:options": {
+            "enableVideo": False,
+            "enableVNC": True}}
+    chrome_options = webdriver.ChromeOptions()
+    driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+                              desired_capabilities=capabilities,
+                              options=chrome_options)
+
+
     print("Start test 1")
     login = Login_page(driver)
     login.authorization()

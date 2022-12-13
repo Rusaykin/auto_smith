@@ -39,3 +39,32 @@ python -m pytest --alluredir=test_results/ tests/ test_buy_product.py
 ```
 E:\Projects\auto_smith> allure serve test_results/
 ```
+
+## For first build from docker compose file on Ubuntu
+rusaykin@rusaykin-TM1703:~/projects/auto_smith$ sudo docker compose up -d
+
+
+## DOCKER
+Проверка образов в докере
+sudo docker images -a
+
+Прооверка запущенных контейнеров
+sudo docker ps -a
+
+Остановка контейнера в докере по id
+sudo docker stop 216459e236c1
+
+sudo docker run ad32e2967e5f
+
+## Jenkins install 
+
+sudo docker run -p 8080:8080 --name=jenkins-master jenkins/jenkins:latest
+
+sudo docker start jenkins-master
+
+sudo docker stop jenkins-master
+home/jenkins_compose/jenkins_configuration
+
+
+Logs of jenkins. You can find out admin pass here
+sudo docker-compose logs -f jenkins

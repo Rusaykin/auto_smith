@@ -14,7 +14,10 @@ from pages.finish_page import Finish_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.payment_page import Payment_page
+from conftest import browser
 import allure
+from selenium.webdriver import DesiredCapabilities
+from selenium.webdriver.chrome.service import Service
 
 
 @allure.description("Test About Link")
@@ -22,7 +25,26 @@ def test_about_link():
     # s = Service('C:\\chromedriver\\chromedriver.exe')
     # driver = webdriver.Chrome(service=s)
     # Install chrome driver from local path
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    # driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
+
+
+    # chrome_options = webdriver.ChromeOptions()
+    # driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+    #                           desired_capabilities=DesiredCapabilities.CHROME,
+    #                           options=chrome_options)
+
+    capabilities = {
+        "browserName": "chrome",
+        "browserVersion": "108.0",
+        "enableVNC": True,
+        "selenoid:options": {
+            "enableVideo": False,
+            "enableVNC ": True}}
+    chrome_options = webdriver.ChromeOptions()
+    driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+                              desired_capabilities=capabilities,
+                              options=chrome_options)
 
     login = Login_page(driver)
     login.authorization()
