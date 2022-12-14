@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+           docker {
+            image 'alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     stages {
      stage("Build image") {
        steps {
-            
+
     	    catchError {
       	        script {
         	      docker.build("python-web-tests", "-f Dockerfile .")
@@ -26,7 +31,7 @@ pipeline {
               script {
           	     docker.image('aerokube/selenoid:1.10.9').withRun('-p 4444:4444 -v /run/docker.sock:/var/run/docker.sock -v /c/Users/User:/etc/selenoid/',
             	'-timeout 600s -limit 2') { c ->
-              	docker.image('python-web-tests').inside("--link ${c.id}:selenoid") {
+              	    docker.image('python-web-tests').inside("--link ${c.id}:selenoid") {
                     	sh "pytest -n 2 --reruns 1"
                 	}
                     }
