@@ -1,6 +1,6 @@
 pipeline {
   agent {
-           docker {
+           any {
             image 'alpine'
             args '-v $HOME/.m2:/root/.m2'
         }
