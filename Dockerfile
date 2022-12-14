@@ -1,8 +1,6 @@
-FROM node:16.13.1-alpine
+FROM alpine
 
-RUN apk add -U subversion
-
-FROM python:latest
+RUN apk add --no-cache curl wget busybox-extras netcat-openbsd python py-pip bash
 
 COPY requirements.txt .
 
