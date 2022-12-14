@@ -4,10 +4,8 @@ pipeline {
     }
     stages {
      stage("Build image") {
-        steps {
-                sh 'node --version'
-                }
-        steps {
+       steps {
+            sh 'node --version'
     	    catchError {
       	        script {
         	      docker.build("python-web-tests", "-f Dockerfile .")
