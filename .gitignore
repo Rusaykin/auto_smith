@@ -6,8 +6,6 @@
 /utilities/__pycache__/*
 /screen/*
 /logs/*
-/test_results/*
-/allure-report/*
 /__pycache__/*
 __pycache__/
 **/__pycache__/
