@@ -10,11 +10,12 @@ def browser():
     print("Using conftest driver")
     capabilities = {
         "browserName": "chrome",
-        "browserVersion": "108.0",
+        "browserVersion": "109.0",
         "selenoid:options": {
+            "enableVNC": True,
             "enableVideo": False}}
     chrome_options = webdriver.ChromeOptions()
-    driver = webdriver.Remote(command_executor='http://172.29.208.1:4444/wd/hub',
+    driver = webdriver.Remote(command_executor='http://172.19.4.193:4444/wd/hub',
                               desired_capabilities=capabilities,
                               options=chrome_options
                               )
