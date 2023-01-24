@@ -68,3 +68,9 @@ home/jenkins_compose/jenkins_configuration
 
 Logs of jenkins. You can find out admin pass here
 sudo docker-compose logs -f jenkins
+
+#Docker run with command
+docker run --rm --mount type=bind,src=C:\Projects\auto_smith,target=/test_project/ pytest_runner
+
+#Allure report
+allure serve test_results/

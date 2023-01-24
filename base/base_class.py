@@ -22,7 +22,7 @@ class Base():
 
     def get_screenshot(self):
         # Создаем скриншот
-        now_date = datetime.datetime.utcnow().strftime("%Y.%m.%d.%H.%M.%S")
+        now_date = str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
         name_screen = "screenshot" + now_date + ".png"
         self.driver.save_screenshot(f"C:\\Projects\\auto_smith\\screen\\" + name_screen)
 
