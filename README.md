@@ -74,3 +74,9 @@ docker run --rm --mount type=bind,src=C:\Projects\auto_smith,target=/test_projec
 
 #Allure report
 allure serve test_results/
+
+
+## Стек
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![PyTest](https://simpleicons.org/icons/pytest.svg)
