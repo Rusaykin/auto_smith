@@ -10,5 +10,5 @@
 __pycache__/
 **/__pycache__/
 /venv
-/test_results/
-/allure-report/*
+test_results/*
+allure-report/*
