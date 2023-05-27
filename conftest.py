@@ -8,14 +8,16 @@ from selenium.webdriver.chrome.options import Options as CO
 @pytest.fixture(scope="function")
 def browser():
     print("Using conftest driver")
+
     capabilities = {
         "browserName": "chrome",
-        "browserVersion": "107.0",
+        "browserVersion": "109.0",
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": False}}
+
     chrome_options = webdriver.ChromeOptions()
-    driver = webdriver.Remote(command_executor='http://172.25.208.1:4444/wd/hub',
+    driver = webdriver.Remote(command_executor='http://192.168.0.121:4444/wd/hub',
                               desired_capabilities=capabilities,
                               options=chrome_options
                               )

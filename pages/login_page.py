@@ -61,5 +61,5 @@ class Login_page(Base):
             self.input_user_name("standard_user")
             self.input_password("secret_sauce")
             self.click_login_button()
-            self.assert_word(self.get_main_word(), 'PRODUCTS')
+            self.assert_word(self.get_main_word(), 'Products')
             Logger.add_end_step(url=self.driver.current_url, method="authorization")

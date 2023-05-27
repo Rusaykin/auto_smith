@@ -1,22 +1,47 @@
 {
-  "chrome": {
-    "default": "107.0",
-    "versions": {
-      "107.0": {
-        "env" : ["LANG=ru_RU.UTF-8", "LANGUAGE=ru:en", "LC_ALL=ru_RU.UTF-8", "TZ=Europe/Moscow"],
-        "image": "selenoid/vnc:chrome_107.0",
-        "tmpfs": {"/tmp": "size=512m"},
-        "hosts": ["x01.aidata.io:127.0.0.1"],
-        "port": "4444",
-        "enableVNC ": "True"
-      },
-      "108.0": {
-        "env": ["LANG=ru_RU.UTF-8", "LANGUAGE=ru:en", "LC_ALL=ru_RU.UTF-8", "TZ=Europe/Moscow"],
-        "image": "selenoid/vnc:chrome_108.0",
-        "tmpfs": {"/tmp": "size=512m"},
-        "hosts": ["x01.aidata.io:127.0.0.1"],
-        "port": "4444"
-      }
+    "chrome": {
+        "default": "109.0",
+        "versions": {
+            "108.0": {
+                "image": "selenoid/chrome:108.0",
+                "port": "4444",
+                "path": "/"
+            },
+            "109.0": {
+                "image": "selenoid/chrome:109.0",
+                "port": "4444",
+                "path": "/"
+            }
+        }
+    },
+    "firefox": {
+        "default": "109.0",
+        "versions": {
+            "108.0": {
+                "image": "selenoid/firefox:108.0",
+                "port": "4444",
+                "path": "/wd/hub"
+            },
+            "109.0": {
+                "image": "selenoid/firefox:109.0",
+                "port": "4444",
+                "path": "/wd/hub"
+            }
+        }
+    },
+    "opera": {
+        "default": "94.0",
+        "versions": {
+            "93.0": {
+                "image": "selenoid/opera:93.0",
+                "port": "4444",
+                "path": "/"
+            },
+            "94.0": {
+                "image": "selenoid/opera:94.0",
+                "port": "4444",
+                "path": "/"
+            }
+        }
     }
-  }
 }
