@@ -17,7 +17,7 @@ def browser():
             "enableVideo": False}}
 
     chrome_options = webdriver.ChromeOptions()
-    driver = webdriver.Remote(command_executor='http://192.168.0.121:4444/wd/hub',
+    driver = webdriver.Remote(command_executor='http://192.168.20.173:4444/wd/hub',
                               desired_capabilities=capabilities,
                               options=chrome_options
                               )
